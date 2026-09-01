@@ -1,0 +1,16 @@
+{
+  "dataset": "scene28",
+  "adapter_status": "stub_requires_independent_calibration_and_prior_policy",
+  "image_size": null,
+  "rgb_source": null,
+  "lidar_source": null,
+  "timestamp_units": null,
+  "coordinate_convention": "p_target = T_target_from_source @ p_source",
+  "K": null,
+  "D": null,
+  "extrinsic_source": null,
+  "registration_mode": "independent_dataset_policy_required",
+  "background_prior_policy": "independent_dataset_policy_required",
+  "scene_specific_priors": {"temporal_background": false, "occupancy": false, "empirical_registration": false},
+  "gt_availability": null
+}

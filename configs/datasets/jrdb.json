@@ -1,0 +1,16 @@
+{
+  "dataset": "jrdb",
+  "adapter_status": "stub_requires_official_schema_and_calibration_audit",
+  "image_size": null,
+  "rgb_source": null,
+  "lidar_source": null,
+  "timestamp_units": null,
+  "coordinate_convention": null,
+  "K": null,
+  "D": null,
+  "extrinsic_source": null,
+  "registration_mode": "official_dataset_calibration_required",
+  "background_prior_policy": "independent_dataset_policy_required",
+  "scene_specific_priors": {"temporal_background": false, "occupancy": false, "empirical_registration": false},
+  "gt_availability": null
+}

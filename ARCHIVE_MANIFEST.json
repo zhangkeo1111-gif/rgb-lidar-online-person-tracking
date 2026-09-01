@@ -1,0 +1,27 @@
+{
+  "archive_id": "07_online_v4",
+  "version": "4.0.0",
+  "archived_date": "2026-08-29",
+  "source_commit": "65a90ac4d7a207ca6f5075841d1b33fe96b28c76",
+  "source_worktree_clean": false,
+  "shared_core": "src/online_v4",
+  "branches": {
+    "A": {
+      "name": "yolo11s-coco",
+      "entry": "A_yolo11s_coco/run.ps1",
+      "checkpoint": "assets/models/detector/yolo11s_coco.pt",
+      "checkpoint_sha256": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5",
+      "outputs": "outputs/online_v4_coco_person"
+    },
+    "B": {
+      "name": "yolo26s-coco",
+      "entry": "B_yolo26s_coco/run.ps1",
+      "checkpoint": "assets/models/detector/yolo26s.pt",
+      "checkpoint_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+      "outputs": "outputs/online_v4_yolo26s_coco_person"
+    }
+  },
+  "comparison": "outputs/yolo11s_vs_yolo26s_coco",
+  "tests_at_archive": "72 passed",
+  "scene28_or_jrdb_started": false
+}

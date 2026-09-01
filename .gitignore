@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+outputs/*
+!outputs/benchmark/
+outputs/benchmark/*
+!outputs/benchmark/metrics_uncapped.json
+!outputs/benchmark/metrics_realtime.json
+!outputs/benchmark/metrics_modules.csv
+!outputs/benchmark/metrics_identity.json
+!outputs/benchmark/metrics_sync.json
+*.tmp

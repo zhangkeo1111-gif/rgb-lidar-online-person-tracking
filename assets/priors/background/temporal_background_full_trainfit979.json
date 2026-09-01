@@ -1,0 +1,12 @@
+{
+  "source_split": "TRAIN_FIT",
+  "frozen": true,
+  "frame_count": 979,
+  "voxel_count": 11244,
+  "voxel_size_m": 0.12,
+  "frequency_threshold": 0.65,
+  "npz_path": "D:\\navwareset_scene01_clean\\outputs\\stage06_geometry_baseline\\background\\temporal_background_full_trainfit979.npz",
+  "sha256": "10223df84a250cb79d9bb79191a70ac54e390e39ac638c72951e1c4acb486e89",
+  "validation_updates": 0,
+  "test_updates": 0
+}
