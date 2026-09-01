@@ -8,14 +8,14 @@
   "branches": {
     "A": {
       "name": "yolo11s-coco",
-      "entry": "A_yolo11s_coco/run.ps1",
+      "entry": "scripts/run_yolo11s_coco.ps1",
       "checkpoint": "assets/models/detector/yolo11s_coco.pt",
       "checkpoint_sha256": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5",
       "outputs": "outputs/online_v4_coco_person"
     },
     "B": {
       "name": "yolo26s-coco",
-      "entry": "B_yolo26s_coco/run.ps1",
+      "entry": "scripts/run_yolo26s_coco.ps1",
       "checkpoint": "assets/models/detector/yolo26s.pt",
       "checkpoint_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
       "outputs": "outputs/online_v4_yolo26s_coco_person"

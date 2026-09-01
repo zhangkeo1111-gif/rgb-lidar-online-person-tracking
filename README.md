@@ -7,12 +7,17 @@ same 3D core:
 
 | Branch | Detector | Entry | Output |
 | --- | --- | --- | --- |
-| A | official COCO YOLO11s PERSON | `A_yolo11s_coco\run.ps1` | `outputs\online_v4_coco_person` |
-| B | official COCO YOLO26s PERSON | `B_yolo26s_coco\run.ps1` | `outputs\online_v4_yolo26s_coco_person` |
+| A | official COCO YOLO11s PERSON | `scripts\run_yolo11s_coco.ps1` | `outputs\online_v4_coco_person` |
+| B | official COCO YOLO26s PERSON | `scripts\run_yolo26s_coco.ps1` | `outputs\online_v4_yolo26s_coco_person` |
 
 The A/B comparison is stored separately under
 `outputs\yolo11s_vs_yolo26s_coco`. See `ARCHIVE_MANIFEST.json` for frozen
 checkpoint hashes and branch ownership.
+
+The repository follows the same top-level layout as Online v2:
+`assets/`, `configs/`, `scripts/`, `src/`, `tests/`, `outputs/`, and the single
+root entry point `run_online.py`. A/B remain logical detector branches selected
+through `--detector`; they are not separate top-level code copies.
 
 `online_v4` is an independent detector-replacement experiment derived from
 `D:\detection\versions\06_online_v3`.
@@ -60,11 +65,15 @@ audited.
 ## Run
 
 ```powershell
-cd D:\detection\versions\07_online_v4
+cd online_v4
 
 # Select either official detector; yolo11s-coco remains the default.
 python run_online.py --detector yolo11s-coco
 python run_online.py --detector yolo26s-coco
+
+# Optional PowerShell wrappers under the shared scripts directory
+.\scripts\run_yolo11s_coco.ps1
+.\scripts\run_yolo26s_coco.ps1
 
 # Full sequence, maximum throughput, no display or video
 D:\navwareset_scene01_clean\.venv\Scripts\python.exe run_online.py `

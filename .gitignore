@@ -5,6 +5,7 @@ __pycache__/
 outputs/*
 !outputs/benchmark/
 outputs/benchmark/*
+!outputs/benchmark/README.md
 !outputs/benchmark/metrics_uncapped.json
 !outputs/benchmark/metrics_realtime.json
 !outputs/benchmark/metrics_modules.csv
