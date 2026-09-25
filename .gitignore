@@ -11,4 +11,8 @@ outputs/benchmark/*
 !outputs/benchmark/metrics_modules.csv
 !outputs/benchmark/metrics_identity.json
 !outputs/benchmark/metrics_sync.json
+!outputs/benchmark/scene01_ab/
+outputs/benchmark/scene01_ab/*
+!outputs/benchmark/scene01_ab/YOLO11S_VS_YOLO26S_COCO_COMPARISON.csv
+!outputs/benchmark/scene01_ab/YOLO26S_COCO_REPORT.md
 *.tmp

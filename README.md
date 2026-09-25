@@ -1,4 +1,9 @@
-# Archived Online v4: COCO-Person Pure-Online RGB-Guided LiDAR 3D Tracking
+# RGB-LiDAR Online Person Tracking
+
+Archived Online v4 research snapshot: COCO-person detection with online
+RGB-guided LiDAR 3D localization and causal tracking. The historical archive
+ID (`07_online_v4`), Python package (`online_v4`), and output directory names
+remain unchanged for reproducibility and downstream path compatibility.
 
 Status: **ARCHIVED / FROZEN 2026-08-29**.
 
@@ -65,7 +70,7 @@ audited.
 ## Run
 
 ```powershell
-cd online_v4
+cd rgb-lidar-online-person-tracking
 
 # Select either official detector; yolo11s-coco remains the default.
 python run_online.py --detector yolo11s-coco
@@ -101,3 +106,11 @@ Branch A artifacts are isolated under `outputs/online_v4_coco_person/`.
 Branch B artifacts are isolated under `outputs/online_v4_yolo26s_coco_person/`.
 Cross-branch metrics and contact sheets are isolated under
 `outputs/yolo11s_vs_yolo26s_coco/`.
+
+The small, frozen Scene01 A/B result files are published under
+`outputs/benchmark/scene01_ab/`. Full prediction logs, runtime outputs, and
+contact sheets remain in the local archive and are not included in Git.
+
+Run unit tests with `python -m pytest -q tests`. Tests that inspect historical
+Online v2/v3 artifacts require the optional sibling `versions/` archive and
+are skipped when this repository is cloned on its own.

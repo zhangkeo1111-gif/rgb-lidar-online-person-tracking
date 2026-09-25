@@ -7,5 +7,6 @@ runtime artifacts out of Git.
 - Branch B (`yolo26s-coco`) writes to `outputs/online_v4_yolo26s_coco_person/`.
 - Cross-detector comparisons write to `outputs/yolo11s_vs_yolo26s_coco/`.
 
-The frozen archive metrics remain documented in the root reports and
-`ARCHIVE_MANIFEST.json`; reruns should not overwrite those records silently.
+The frozen Scene01 detector comparison is in `scene01_ab/`; checkpoint and
+branch provenance are in `ARCHIVE_MANIFEST.json`. Reruns should not overwrite
+those records silently.

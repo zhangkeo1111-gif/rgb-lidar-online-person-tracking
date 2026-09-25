@@ -9,7 +9,7 @@ import pytest
 from ultralytics import YOLO
 
 ROOT = Path(__file__).resolve().parents[1]
-V3 = Path(r'D:\detection\versions\06_online_v3')
+V3 = ROOT.parent / 'versions' / '06_online_v3'
 sys.path.insert(0, str(ROOT / 'src'))
 
 from online_v4 import __version__, dataset_adapter, pipeline
@@ -82,6 +82,8 @@ def test_dataset_adapter_prevents_scene01_prior_leakage() -> None:
 
 
 def test_short_tracker_source_is_byte_identical_to_v3() -> None:
+    if not V3.is_dir():
+        pytest.skip('requires the sibling Online v3 archive')
     assert digest(ROOT / 'src' / 'online_v4' / 'tracking.py') == digest(
         V3 / 'src' / 'online_v3' / 'tracking.py')
 

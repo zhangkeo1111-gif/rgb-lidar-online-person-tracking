@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 import torch
 ROOT = Path(__file__).resolve().parents[1]
-V3_ROOT = ROOT.parent / '06_online_v3'
+V3_ROOT = ROOT.parent / 'versions' / '06_online_v3'
 sys.path.insert(0, str(ROOT / 'src'))
 sys.path.insert(0, str(ROOT / 'scripts'))
 from online_v4.identity import PersistentIdentityManager
@@ -292,6 +292,8 @@ def test_empirical_inference_shift_is_exact_and_does_not_change_raw_projection()
 
 
 def test_empirical_offset_audit_passed_and_is_integrated_scene01_only() -> None:
+    if not V3_ROOT.is_dir():
+        pytest.skip('requires the sibling Online v3 archive')
     summary = json.loads((V3_ROOT / 'outputs' / 'empirical_pixel_offset_audit' /
                           'audit_summary.json').read_text(encoding='utf-8'))
     assert summary['status'] == 'PASS'
@@ -597,6 +599,8 @@ def test_cpu_cuda_suppression_and_geometry_equivalence() -> None:
 
 
 def test_fn_root_cause_audit_is_exclusive_complete_and_frozen() -> None:
+    if not V3_ROOT.is_dir():
+        pytest.skip('requires the sibling Online v3 archive')
     output = V3_ROOT / 'outputs' / 'fn_root_cause_audit'
     summary = json.loads((output / 'audit_summary.json').read_text(encoding='utf-8'))
     with (output / 'fn_case_details.csv').open(encoding='utf-8-sig', newline='') as stream:
@@ -610,6 +614,8 @@ def test_fn_root_cause_audit_is_exclusive_complete_and_frozen() -> None:
 
 
 def test_fn_root_cause_audit_gt_and_holdout_isolation() -> None:
+    if not V3_ROOT.is_dir():
+        pytest.skip('requires the sibling Online v3 archive')
     output = V3_ROOT / 'outputs' / 'fn_root_cause_audit'
     summary = json.loads((output / 'audit_summary.json').read_text(encoding='utf-8'))
     assert summary['safety']['gt_loaded_after_predictions'] is True
@@ -638,6 +644,8 @@ def test_a2_cuboid_proxy_uses_all_eight_projected_corners() -> None:
 
 
 def test_a2_audit_is_complete_exclusive_and_frozen() -> None:
+    if not V3_ROOT.is_dir():
+        pytest.skip('requires the sibling Online v3 archive')
     output = V3_ROOT / 'outputs' / 'a2_correspondence_decomposition'
     summary = json.loads((output / 'audit_summary.json').read_text(encoding='utf-8'))
     prior = json.loads((V3_ROOT / 'outputs' / 'fn_root_cause_audit' /
@@ -655,6 +663,8 @@ def test_a2_audit_is_complete_exclusive_and_frozen() -> None:
 
 
 def test_a2_audit_has_no_gt_runtime_or_calibration_writeback() -> None:
+    if not V3_ROOT.is_dir():
+        pytest.skip('requires the sibling Online v3 archive')
     output = V3_ROOT / 'outputs' / 'a2_correspondence_decomposition'
     summary = json.loads((output / 'audit_summary.json').read_text(encoding='utf-8'))
     receipt = json.loads((output / 'freeze_receipt_before_gt.json').read_text(encoding='utf-8'))
